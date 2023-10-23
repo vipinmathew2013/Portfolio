@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders} from '@angular/common/http';
 import { ProfileService } from '../profile.service';
-import { SnotifyService } from 'ng-snotify';
 import { environment } from '../../../environments/environment';
 
 @Component({

@@ -123,7 +123,7 @@ exports.isDefined = function (value) {
 
 exports.parseQueryParams = function (locationSearch) {
   var params = {}
-  var pairs = locationSearch.substr(1).split('&')
+  var pairs = locationSearch.slice(1).split('&')
   var keyValue
 
   for (var i = 0; i < pairs.length; i++) {
@@ -312,7 +312,7 @@ var callParentKarmaMethod = ContextKarma.getDirectCallParentKarmaMethod(parentWi
 // DEV: We avoid using this in Internet Explorer as they only support strings
 //   https://caniuse.com/?search=postmessage
 var haveParentAccess = false
-try { haveParentAccess = !!parentWindow.window } catch (err) { /* Ignore errors (likely permisison errors) */ }
+try { haveParentAccess = !!parentWindow.window } catch (err) { /* Ignore errors (likely permission errors) */ }
 if (!haveParentAccess) {
   callParentKarmaMethod = ContextKarma.getPostMessageCallParentKarmaMethod(parentWindow)
 }
